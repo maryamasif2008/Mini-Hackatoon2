@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('https://cdn.vectorstock.com/i/500p/84/65/abstract-white-monochrome-background-vector-32028465.jpg'); background-size: cover; background-repeat: no-repeat;">
+
+  <nav class="bg-gray-100 shadow-md fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="text-xl font-bold text-blue-800">SKILLS SHARE</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#" class="text-gray-700 hover:text-blue-800">Login</a>
+          <a href="#" class="text-gray-700 hover:text-blue-800">SignUp</a>
+        </div>
+
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-500 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="#" class="block text-gray-700 hover:text-blue-800 py-2">Login</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-800 py-2">SignUp</a>
+    </div>
+  </nav>
+
+  <div class="h-16"></div>
+
+  <div class="flex justify-center gap-4 mt-[60px] mb-8">
+    <button onclick="showCategory('watches')" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-400">Watches</button>
+    <button onclick="showCategory('rings')" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-400">Rings</button>
+    <button onclick="showCategory('clothes')" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-400">Clothes</button>
+  </div>
+  
+    <div class="max-w-2xl mx-auto">
+        <form id="product-form" class="w-full bg-transparent p-6 rounded-lg ">
+    
+          <div class="mb-4">
+            <label for="category" class="block text-gray-700 font-medium mb-2">Category</label>
+            <input type="text" id="category" name="category" placeholder="Enter category"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          </div>
+    
+          <div class="mb-4">
+            <label for="price" class="block text-gray-700 font-medium mb-2">Tittle</label>
+            <input type="text" id="price" name="price" placeholder="Enter tittle"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          </div>
+
+          <div class="mb-4">
+            <label for="description" class="block text-gray-700 font-medium mb-2">Description</label>
+            <textarea id="description" name="description" rows="3" placeholder="Enter description"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+          </div>
+    
+    
+          <button type="submit"
+            class="bg-blue-800 text-white py-2 px-6 rounded-lg hover:bg-gray-400 transition">Submit</button>
+        </form>
+      </div>
+  
+      <div id="cards-container" class="flex flex-wrap justify-center gap-6 px-4 pb-10">
+
+        <!--Watches Cards -->
+        <div class="card watches max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden mt-10px">
+          <img class="w-full h-48 object-cover" src="https://video-play.daraz.pk/cover/640277.jpg" alt="Watch" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Luxury Watch</h2>
+            <p class="text-gray-600">Classic leather design</p>
+            <p class="text-gray-600">Price: $9,000</p>
+          </div>
+        </div>
+        <div class="card watches max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden">
+          <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkQAiUPsvAMo0uMKKOyuqhQOaJ8kTLrXYBGA&s" alt="Smartwatch" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Smart Watch</h2>
+            <p class="text-gray-600">Fitness & notification tracking</p>
+            <p class="text-gray-600">Price: $2,000</p>
+          </div>
+        </div>
+        <div class="card watches max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden">
+          <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJP-GnCAQm2RQpx8xf5QfZfwLEqX5aPFjsg&s" alt="Wristwatch" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Wrist Watch</h2>
+            <p class="text-gray-600">Elegant and durable</p>
+            <p class="text-gray-600">Price: $14,000</p>
+          </div>
+        </div>
+    
+        <!-- Rings Cards -->
+        <div class="card rings max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden mt-10px">
+          <img class="w-full h-48 object-cover" src="https://www.collectionary.store/wp-content/uploads/2021/02/IMG_6655-1200x1200.png" alt="Ring" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Diamond Ring</h2>
+            <p class="text-gray-600">Timeless elegance</p>
+            <p class="text-gray-600">Price: $7,000</p>
+          </div>
+        </div>
+        <div class="card rings max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden">
+          <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8YZDD3TM95IgW-McjbvNkhf53gFQa2cgh7Q&s" alt="Gold Ring" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Gold Ring</h2>
+            <p class="text-gray-600">Shiny and rich design</p>
+            <p class="text-gray-600">Price: $3,000</p>
+          </div>
+        </div>
+        <div class="card rings max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden">
+          <img class="w-full h-48 object-cover" src="https://thegracepk.com/cdn/shop/products/BIPM0001R26_WAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-17777.webp?v=1657559013&width=1024" alt="Engagement Ring" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Engagement Ring</h2>
+            <p class="text-gray-600">Perfect for special moments</p>
+            <p class="text-gray-600">Price: $5,000</p>
+          </div>
+        </div>
+    
+        <!--Clothes Cards -->
+        <div class="card clothes max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden mt-10px">
+          <img class="w-full h-48 object-cover" src="https://jazmin.pk/cdn/shop/files/g_83f810c3-c82f-4d2d-ad33-ffc0fe9de9a3.jpg?v=1727415368&width=1200" alt="Clothes" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Fancy Suit</h2>
+            <p class="text-gray-600">Comfortable for everyday</p>
+            <p class="text-gray-600">Price: $11,000</p>
+          </div>
+        </div>
+        <div class="card clothes max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden">
+          <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGhbo5voxOUHbPJTJam1kvTmewkPRgbgO7Fd7BEUApqnwy8K7syOs0DdhgOZSBV39ZyAM&usqp=CAU" alt="T-Shirt" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Casual Suit</h2>
+            <p class="text-gray-600">Soft cotton fabric</p>
+            <p class="text-gray-600">Price: $13,000</p>
+          </div>
+        </div>
+        <div class="card clothes max-w-sm bg-white rounded-lg shadow-md overflow-hidden hidden">
+          <img class="w-full h-48 object-cover" src="https://empress-clothing.com/cdn/shop/files/UR7014.jpg" alt="Jacket" />
+          <div class="p-4">
+            <h2 class="text-xl font-bold text-gray-800">Bridal Suit</h2>
+            <p class="text-gray-600">Stay warm in style</p>
+            <p class="text-gray-600">Price: $1,000</p>
+          </div>
+        </div>
+      </div>
+    
+  <script src="script.js"></script>
+
+</body>
+</html>
